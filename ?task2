@@ -1,0 +1,58 @@
+// 10to2a2to10.cpp: определяет точку входа для консольного приложения.
+//
+
+
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int *a, t,n, x,el,k,i,m,j,T=1; 
+
+int recc (int m){	//? 
+T++;
+	cin>> el;
+	k=0;
+	if (el%2==1) 
+m=recc(el-1)/2;
+
+else
+m=recc(el)/2;
+a=new int[k];
+a[i]=recc(el)%2; k++;
+return (m,k); 
+}	//? 
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	cout<<" chose: 1- in 10 system, 2- in 2 system"<<endl;
+	cin>>t;
+	switch (t)
+
+	{
+	case 1: {	cout<<" Put the number"<<endl;
+
+recc(m); //
+
+
+cout<<"In 2 system"<<endl;
+ for(i=k;i>=0;i--) cout<<a[i]<<"  ";
+break;
+	}
+	case 2: { 	cout<<"how many digits in binory  "<<endl;
+		cin>>n;
+			cout<<"put seqence of 0 or/and 1: "<<endl;
+			a= new int[n];
+			for(i=0; i<n; i++){
+				cin>>a[i];
+				if (a[i] <0 || a[i]>1){cout<<"0 or/and 1: "; break;}
+			}
+			x=0; 
+			j=i; 
+			
+			for (i=n-1;i>=0;i--){ x=pow(2,i)*(a[j]); ///
+			x+=x;	} cout<<x;
+		break;
+	}
+	}
+	delete [] a;
+	return 0;
+}
